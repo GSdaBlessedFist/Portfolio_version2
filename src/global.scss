@@ -1,14 +1,21 @@
-
 :root{
+	--bgLight: hsl(180, 100%, 30%);/*teal*/
 	--bg: hsl(180, 100%, 25%);/*teal*/
-	--bg2: hsl(180, 100%, 15%);/*teal*/
+	--bgDark: hsl(180, 100%, 15%);/*teal*/
 }
 
-$bg : var(--bg2);
+$bg : var(--bg);
+$bgLight : var(--bgLight);
+$bgDark : var(--bgDark);
 
-@mixin b($c:red){}
+*{
+	margin: 0;
+	box-sizing: border-box;
+	border: 1px dashed yellow;
 
+}
 body{
 	color: orange;
 	background: $bg;
+	overflow: hidden;
 }

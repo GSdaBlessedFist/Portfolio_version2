@@ -1,16 +1,22 @@
+@import "../global.scss";
 .headerBar{
+	width: clamp(800px,100%,100%);
 	display: flex;
 	padding: .5rem;
 	justify-content: space-between;
 	align-items:center;
-	border-bottom: 1px solid yellow;
+	// border-bottom: 1px solid yellow;
+	background: $bgLight;
 	&-title{
+		margin: 0px 5px;
 		font-size: 25px;
 	}
 	&-buttonGroup{
 		&-buttons{
+			text-decoration: none;
 			padding:.5rem;
-			border: 2px solid white;
+			margin: 0px 5px;
+			// border: 2px solid white;
 			color: orange;
 			&--activeLink{
 				color: white;
@@ -21,5 +27,5 @@
 }
 
 #portfolio{
-	
+	color: lighten(orange,35%);
 }
