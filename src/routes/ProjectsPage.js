@@ -1,4 +1,5 @@
-import styles from "./projectsPage.module.scss";
+import styles from "./projectsPage.scss";
+
 
 export default function ProjectsPage(){
 	

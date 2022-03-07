@@ -1,5 +1,5 @@
 
-import styles from "./theDojoPage.module.scss";
+import styles from "./theDojoPage.scss";
 
 export default function TheDojoPage(){
 	

@@ -1,5 +1,5 @@
 
-import styles from "./aboutMePage.module.scss";
+import styles from "./aboutMePage.scss";
 
 export default function AboutMePage(){
 	
