@@ -1,13 +1,25 @@
 .headerBar{
-	padding: 1rem;
-	&-buttons{
-		border: 2px solid white;
-		
-		&--activeLink{
-			font-size: 1.25rem;
-			color: white;
-		}
-		--inActiveLink{}
-	}	
+	display: flex;
+	padding: .5rem;
+	justify-content: space-between;
+	align-items:center;
+	border-bottom: 1px solid yellow;
+	&-title{
+		font-size: 25px;
+	}
+	&-buttonGroup{
+		&-buttons{
+			padding:.5rem;
+			border: 2px solid white;
+			color: orange;
+			&--activeLink{
+				color: white;
+			}
+		}	
+	}
+	
 }
 
+#portfolio{
+	
+}

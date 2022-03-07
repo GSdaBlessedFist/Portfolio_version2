@@ -5,25 +5,29 @@ import gsap from "gsap";
 
 export default function HeaderBar(){
 	
-	
 
 	return (<>
 		<nav className={"headerBar"}>
-			<NavLink to="/projects" 				
-				className={({ isActive }) => (isActive ? "headerBar-buttons headerBar-buttons--activeLink": 
-														 "headerBar-buttons headerBar-buttons--inActiveLink")}>
-				Projects
-			</NavLink>
-    		<NavLink to="/the-dojo"
-				className={({ isActive }) => (isActive ? "headerBar-buttons headerBar-buttons--activeLink": 
-														 "headerBar-buttons headerBar-buttons--inActiveLink")}>
-    			The DOJO
-    		</NavLink>
-    		<NavLink to="/about-me"
-				className={({ isActive }) => (isActive ? "headerBar-buttons headerBar-buttons--activeLink": 
-														 "headerBar-buttons headerBar-buttons--inActiveLink")}>
-    			about me
-    		</NavLink>
+			<div className="headerBar-title">Jason Zamora's <span id="portfolio">PORTFOLIO</span></div>
+			<div className="headerBar-buttonGroup">
+				<NavLink to="/projects"  				
+					className={({ isActive }) => (isActive ? "headerBar-buttonGroup-buttons headerBar-buttonGroup-buttons--activeLink": 
+															 "headerBar-buttonGroup-buttons")}>
+					Projects
+				</NavLink>
+
+	    		<NavLink to="/the-dojo"
+					className={({ isActive }) => (isActive ? "headerBar-buttonGroup-buttons headerBar-buttonGroup-buttons--activeLink":
+															 "headerBar-buttonGroup-buttons")}>
+	    			The DOJO
+	    		</NavLink>
+	    		<NavLink to="/about-me"
+					className={({ isActive }) => (isActive ? "headerBar-buttonGroup-buttons headerBar-buttonGroup-buttons--activeLink":
+															 "headerBar-buttonGroup-buttons")}>
+	    			about me
+	    		</NavLink>
+	    		<Outlet/>
+    		</div>
 		</nav>
 	</>)
 }
