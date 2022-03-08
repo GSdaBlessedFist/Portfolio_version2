@@ -1,0 +1,14 @@
+@import "../global.scss";
+.footerBar{
+	grid-area: footer-nav;
+	display: block;
+	position: sticky;
+	bottom:0;
+	width: clamp(800px,100%,100%);
+	display: flex;
+	padding: .75rem;
+	justify-content: space-between;
+	align-items:center;
+	// border-bottom: 1px solid yellow;
+	background: $bgLight;
+}

@@ -1,6 +1,7 @@
 @import "../global.scss";
 .headerBar{
-	width: clamp(800px,100%,100%);
+	grid-area: header-nav;
+	width: 100%;
 	display: flex;
 	padding: .5rem;
 	justify-content: space-between;

@@ -1,7 +1,9 @@
 import * as React from "react"
+import "../routes/homePage.scss"
 
 const HomePageMenu = (props) => (
   <svg
+    id={"homePageMenu"}
     width={635.92}
     height={491.33}
     viewBox="0 0 168.25 130"
