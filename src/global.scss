@@ -1,7 +1,7 @@
 :root{
-	--bgLight: hsl(180, 100%, 30%);/*teal*/
-	--bg: hsl(180, 100%, 25%);/*teal*/
-	--bgDark: hsl(180, 100%, 15%);/*teal*/
+	--bgLight: hsl(240, 25%, 54%);/*teal*/
+	--bg: hsl(240, 25%, 34%);/*teal*/	
+	--bgDark: hsl(240, 10%, 14%);/*teal*/
 }
 
 $bg : var(--bg);
@@ -11,7 +11,7 @@ $bgDark : var(--bgDark);
 *{
 	margin: 0;
 	box-sizing: border-box;
-	border: 1px dashed yellow;
+	/*border: 1px dashed yellow;*/
 
 }
 body{

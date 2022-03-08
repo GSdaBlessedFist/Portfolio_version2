@@ -8,9 +8,10 @@
 	grid-template-areas: "space"
 						 "menu"
 						 "space";
-	border: 5px solid red;
+	/* border: 5px solid red;*/
 }
 #homePageMenu{
+	transform: scale(1.2);
 	position: relative;
 	right: -555px;
 }
