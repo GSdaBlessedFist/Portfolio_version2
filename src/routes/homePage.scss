@@ -3,15 +3,29 @@
 
 	display: grid;
 	margin: 0px auto;
-	width: clamp(800px,75%,1200px);
-	grid-template-rows: 1fr auto 1fr;
+	width: 100%;
+	grid-template-rows: 10% auto 10%;
 	grid-template-areas: "space"
 						 "menu"
 						 "space";
 	/* border: 5px solid red;*/
 }
+.space{
+	/*background: red;*/
+}
+.middle{
+	display: flex;
+	margin: 0 auto;
+	width: 1200px;
+	align-items: flex-start;
+	justify-content:center;
+	/*background:blue;*/
+	outline: 2px red solid;
+}
 #homePageMenu{
-	transform: scale(1.2);
-	position: relative;
-	right: -555px;
+	position: absolute;
+	right: 20%;
+	/*outline: 2px red solid;*/
+	fill: white;
+
 }

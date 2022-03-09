@@ -6,7 +6,9 @@ export default function HomePage(){
 	return (
 		<div className="homePageGrid">
 			<div className="space"></div>
-			<HomePageMenu/>
+			<div className="middle">
+				<HomePageMenu/>
+			</div>
 			<div className="space"></div>
 		</div>
 	)
