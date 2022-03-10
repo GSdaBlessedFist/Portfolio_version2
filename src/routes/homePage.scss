@@ -25,7 +25,15 @@
 #homePageMenu{
 	position: absolute;
 	right: 20%;
-	/*outline: 2px red solid;*/
+	outline: 2px red solid;
 	fill: white;
 
+}
+[id^="projects-"]{
+	/*outline: 1px yellow solid;*/
+	opacity:1;
+	fill: white;
+}
+#box{
+	
 }

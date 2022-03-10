@@ -1,4 +1,5 @@
 import {useEffect,useRef} from "react";
+import { useNavigate } from "react-router-dom";
 import {gsap} from "gsap";
 import "../routes/homePage.scss"
 
@@ -9,25 +10,41 @@ export default function HomePageMenu(){
     projectLetterRefs.current = [];
     var projectLetters = projectLetterRefs.current;
 
-  const addProjectRefs = (el) => {
+  function addProjectRefs(el){
     if (el && !projectLetters.includes(el)) {
       projectLetters.push(el);
     }
   };
 
+  const projectNavigation = useNavigate();
+
+
   useEffect(()=>{
     const abortController = new AbortController();
 
     const tl = gsap.timeline({});
+    
     tl.from(projectLetters,{
       x:350,
       duration: 1.2,
-      scale: 2,
+      scale: .5,
       stagger: .25,
       ease: "back.out(1.4)"
     })
+    .from(projectLetters,{
+      autoAlpha: 0,
+      duration:4.5,
+      ease: "power1",
+      onComplete: function(){ 
+        projectLetters.map((pL)=>{
+          pL.addEventListener("click",()=>{
+            projectNavigation('/projects');
+          })
+        })
+      }
+    },"<")
     
-    console.log(projectLetters)
+    
     return ()=>{
       abortController.abort(); 
     } 
@@ -35,7 +52,18 @@ export default function HomePageMenu(){
 
   return (<>
     <svg  id="homePageMenu" width="770" height="512" version="1.1" viewBox="0 0 204 136" xmlns="http://www.w3.org/2000/svg">
-       <g id="projects-link" transform="translate(-54 -43)" strokeWidth="1.1" aria-label="Projects">
+      <defs>
+        <linearGradient id="projects-gradient" gradientTransform="rotate(90)" >
+          <stop offset="0%" stopColor="white"/>
+          <stop offset="80%" stopColor="black"/>
+          <stop offset="100%" stopColor="black"/>
+        </linearGradient>
+      </defs>
+        <mask id="project-mask" >
+          <rect x="0" y="0" width="770" height="250" fill="url(#projects-gradient)" />
+        </mask>
+        
+       <g id="projects-link"  transform="translate(-54 -43)" strokeWidth="1.1" aria-label="Projects">
         <path id="projects-letter-p" ref={addProjectRefs} d="m89 88q1.5-6.8 2.9-13 0.55-2.7 1.2-5.8 0.6-3 1.2-6 0.56-2.9 1.1-5.6 0.51-2.7 0.86-5 1.5-0.45 2.9-0.75 1.4-0.35 2.8-0.61 1.6-0.25 2.9-0.25 2.2 0 3.7 0.76 1.6 0.75 2.6 2.1 0.9 1.3 1.3 3t0.4 3.7q0 2.8-1 5.4-1 2.6-2.8 4.7-1.7 2-4 3.2-2.2 1.2-4.6 1.2h-0.6q-0.38 1.7-0.74 3.7-0.35 2-0.6 3.7-0.35 2-0.66 4zm14-31q-0.5 3.3-1.1 6.3-0.5 3-1.2 6.4 0.8-0.2 1.7-0.91 0.9-0.76 1.7-1.9 0.7-1.2 1.2-2.8 0.4-1.6 0.4-3.3 0-1.9-0.8-2.8t-1.9-0.96z"/>
         <path id="projects-letter-r" ref={addProjectRefs} d="m109 88q1.4-6.7 2.7-13 0.4-2.7 1-5.6 0.5-3 1-5.8 0.5-2.9 0.9-5.6 0.4-2.7 0.7-4.9 2.9-0.91 6.2-1.3 3.3-0.46 6.6-0.46 2 0 3.2 0.46 1.3 0.45 2 1.3 0.8 0.81 1.1 1.9 0.3 1.1 0.3 2.5 0 2-0.7 4-0.7 1.9-1.9 3.7-1.2 1.7-2.7 3.2-1.5 1.4-3.3 2.3 0.9 2 1.9 4.4 1.1 2.4 2 4.5 1 2.5 2 5l-7.8 2.7q-1-3.2-1.8-6.1-0.3-1.2-0.7-2.4-0.4-1.3-0.7-2.4-0.3-1.1-0.5-2-0.2-0.91-0.2-1.5l-0.7 0.2q-0.3 1.6-0.7 3.8t-0.8 4.2q-0.4 2.4-0.9 4.8zm12-22q1-0.1 2.3-0.81 1.4-0.7 2.7-1.7 1.2-1 2.2-2.1 0.9-1.1 0.9-1.9 0-0.56-0.4-0.86-0.3-0.35-1-0.51-0.6-0.2-1.4-0.25-0.7 0-1.5 0-0.6 0-1.2 0-0.5 0-1 0z"/>
         <path id="projects-letter-o" ref={addProjectRefs} d="m159 60q0 4.1-0.9 7.8-0.9 3.6-2.4 6.7-1.4 3-3.4 5.4-1.9 2.4-4 4.1-2.1 1.7-4.3 2.6-2.2 0.85-4.1 0.85-1.7 0-3.1-0.6-1.3-0.66-2.3-1.9-1-1.3-1.7-3.2-0.5-2-0.5-4.7 0-2.8 0.7-6 0.7-3.1 1.9-6.2 1.2-3.1 3-5.8 1.8-2.8 3.9-4.9 2.1-2.2 4.5-3.4t5.1-1.3q2.2 0 3.7 0.95 1.5 0.91 2.3 2.4 0.9 1.5 1.2 3.3 0.4 1.9 0.4 3.7zm-19 16q0 0.55 0.2 1.2 0.2 0.6 0.6 1 0.3 0.46 0.8 0.81 0.6 0.3 1.2 0.3 2.2 0 4-1.6t2.9-3.8q1.2-2.3 1.8-4.8 0.7-2.6 0.7-4.7 0-0.61-0.1-1.3-0.1-0.71-0.3-1.3-0.2-0.61-0.8-1-0.4-0.45-1.2-0.45-1.6 0-3 0.8-1.3 0.81-2.5 2.2-1 1.3-1.8 3-0.8 1.7-1.4 3.4-0.6 1.7-0.8 3.4-0.3 1.7-0.3 2.9z"/>
@@ -69,4 +97,17 @@ export default function HomePageMenu(){
 }
 
 
+
+//////////////////////////
+// TweenMax.to(obj, 1.5,{
+//       rotation:360,
+//       onCompleteParams:[obj],
+//       onComplete:toggle  
+// });
+
+
+// function toggle(o){
+//     TweenMax.to(o,1,{backgroundColor:"#CC0000"});
+//     $("#msg").html($(o).attr("id")+" onComplete fired");
+// }
 
