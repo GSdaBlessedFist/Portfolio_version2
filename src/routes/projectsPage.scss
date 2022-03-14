@@ -1,3 +1,40 @@
-.projectsPage{
-	background: #ed2340;
+@import "../global.scss";
+.projectsPageGrid{
+	margin: 0 auto;
+	border: 1px red solid;
+	display: grid;
+	width: 90%;
+	height: 100vh;
+	padding: 20px;
+	grid-template-rows: 200px 1fr;
+	grid-template-areas: "title"
+						 "pieces";
+	&--title{
+		@include mainFont;
+		font-size: 150px;
+	}
+}
+.projectsComponent{
+	grid-area: pieces;
+	margin: 0 auto;
+	width: 85%;
+	height: 500px;
+	display: flex;
+	justify-content: space-between;
+
+	&--descriptionSection{
+		padding: 0 50px;
+		border: 1px orange solid;
+		@include minorFont;
+		font-size: 2rem;
+		flex-grow: 1;
+		&_goal{
+			margin: 25px 15px;
+			border: 3px yellow solid;
+		}
+	}
+	&--workSection{
+		flex-grow: 1;
+		border: 1px orange solid;
+	}
 }

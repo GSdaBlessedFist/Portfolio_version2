@@ -1,3 +1,4 @@
+@import "../global.scss";
 .homePageGrid{
 	grid-area: main-content;
 
@@ -20,20 +21,32 @@
 	align-items: flex-start;
 	justify-content:center;
 	/*background:blue;*/
-	outline: 2px red solid;
+	/*outline: 2px red solid;*/
 }
 #homePageMenu{
 	position: absolute;
-	right: 20%;
-	outline: 2px red solid;
-	fill: white;
+	right: clamp(15%,5%,600px);
+	transform-origin: 100% 0%;
+	transform: scale(1.35)
+	/*outline: 2px red solid;*/
+	
 
+}
+.menuButton{
+	fill: $menuLetters;
+}
+.menuButtonHover{
+	fill: $highlightMenuLetters;
 }
 [id^="projects-"]{
 	/*outline: 1px yellow solid;*/
 	opacity:1;
-	fill: white;
+	
+	
 }
 #box{
 	
+}
+#aboutme-link{
+	transform-origin: 50% 50%;
 }

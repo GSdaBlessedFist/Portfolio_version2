@@ -1,12 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Odibee+Sans&display=swap');
+@mixin mainFont{
+	font-family: 'Bangers', cursive;
+}
+@mixin minorFont{
+	font-family: 'Odibee Sans', cursive;
+}
+
 :root{
 	--bgLight: hsl(240, 25%, 54%);/*teal*/
 	--bg: hsl(240, 25%, 34%);/*teal*/	
 	--bgDark: hsl(240, 10%, 14%);/*teal*/
+	--menuLetters: hsla(20,50%,60%,1);/*hsla(22,100%,50%,.75)*/
+	--highlightMenuLetters: hsla(20,50%,80%,.75);/*hsla(22,100%,70%,.75)*/
 }
 
 $bg : var(--bg);
 $bgLight : var(--bgLight);
 $bgDark : var(--bgDark);
+$menuLetters:  var(--menuLetters);
+$highlightMenuLetters: var(--highlightMenuLetters);
 
 *{
 	margin: 0;
@@ -15,8 +27,8 @@ $bgDark : var(--bgDark);
 
 }
 body{
-	color: orange;
-	background: $bg;
+	color: $menuLetters;
+	background: linear-gradient(to bottom,$bg,$bgDark);
 	overflow: hidden;
 	height:100vh;
 }
