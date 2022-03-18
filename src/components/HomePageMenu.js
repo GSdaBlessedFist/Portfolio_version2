@@ -133,7 +133,7 @@ export default function HomePageMenu(){
       scale:.5,
       ease: "elastic.out(1.75, 1)",
       duration: 1.25
-    },"-=.65")
+    },"+=.05")
     aboutMeAnimation.eventCallback("onComplete",()=>{
       aboutMeLetters.map((aL)=>{
           aL.addEventListener("click",()=>{

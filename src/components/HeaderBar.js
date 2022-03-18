@@ -8,7 +8,7 @@ export default function HeaderBar(){
 
 	return (<>
 		<nav className={"headerBar"}>
-			<div className="headerBar-title">Jason Zamora's <span id="portfolio">PORTFOLIO</span></div>
+			<div className="headerBar-title">Jason Zamora's <a href="/"><span id="portfolio">portfolio</span></a></div>
 			<div className="headerBar-buttonGroup">
 				<NavLink to="/projects"  				
 					className={({ isActive }) => (isActive ? "headerBar-buttonGroup-buttons headerBar-buttonGroup-buttons--activeLink": 
@@ -21,7 +21,7 @@ export default function HeaderBar(){
 															 "headerBar-buttonGroup-buttons")}>
 	    			The DOJO
 	    		</NavLink>
-	    		<NavLink to="/about-me"
+	    		<NavLink to="/about-me" id="aboutme"
 					className={({ isActive }) => (isActive ? "headerBar-buttonGroup-buttons headerBar-buttonGroup-buttons--activeLink":
 															 "headerBar-buttonGroup-buttons")}>
 	    			about me
