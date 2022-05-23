@@ -1,0 +1,30 @@
+@import "../global.scss";
+
+#funnelsBG{
+	background-color: green;
+	background-blend-mode: normal;
+}
+#funnels {
+	width: 100%;
+	position: absolute;
+	top: $navbarHeight;
+	left: 0;
+	/*opacity: .175;
+	background-color: pink;
+ 	background-blend-mode: screen;*/
+	&_group{
+		
+		opacity: 1;
+		background-color: green;
+	 	background-blend-mode: normal;
+	}
+}
+
+[id^="path"] {	
+	/*filter: "url(#filter)";*/
+
+	/*mix-blend-mode:color-burn;*/
+	mix-blend-mode: multiply;
+	
+}
+

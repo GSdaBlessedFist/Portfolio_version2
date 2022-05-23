@@ -1,7 +1,6 @@
 @import "../global.scss";
 .homePageGrid{
 	grid-area: main-content;
-
 	display: grid;
 	margin: 0px auto;
 	width: 100%;
@@ -20,8 +19,6 @@
 	width: 1200px;
 	align-items: flex-start;
 	justify-content:center;
-	/*background:blue;*/
-	/*outline: 2px red solid;*/
 }
 #homePageMenu{
 	position: absolute;

@@ -9,6 +9,7 @@
 	grid-template-areas: "title"
 						 "pieces";
 	box-shadow: 5px 15px 25px 2px hsla(0,100%,0%,.15);
+
 	&--title{
 		@include mainFont;
 		font-size: 150px;
@@ -26,8 +27,14 @@
 		}
 	}
 }
-.projectsComponent{
+.projectsArea{
 	grid-area: pieces;
+	padding-bottom: 150px;
+	overflow-y: auto;
+	scroll-behavior: smooth;
+}
+.projectsComponent{
+	
 	margin: 0 auto;
 	width: 85%;
 	height: 650px;
@@ -35,12 +42,6 @@
 	justify-content: space-between;
 	border-bottom: 15px hsla(0,50%,0%,.25) solid;
 	overflow: hidden;
-	@at-root{
-		.projectsArea{
-			padding-bottom: 150px;
-			overflow-y: auto;
-		}
-	}
 	&--descriptionSection{
 		order:1;
 		padding: 30px 15px;

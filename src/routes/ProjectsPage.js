@@ -1,7 +1,8 @@
 import {useRef,useEffect} from "react";
-import styles from "./projectsPage.scss";
+import "./projectsPage.scss";
 import pieces from "../projectInfo.js";
 import {gsap} from "gsap";
+// import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 export default function ProjectsPage(){
 	
@@ -15,26 +16,26 @@ export default function ProjectsPage(){
 	};
 
 	useEffect(()=>{
-		gsap.set(firstLetterButtons,{
-			fontSize: function(){return gsap.utils.random(2,5.0)+"rem"}
-		})
+		// gsap.set(firstLetterButtons,{
+		// 	fontSize: function(){return gsap.utils.random(2,5.0)+"rem"}
+		// })
 	},[])
 	const revPieces = pieces.reverse();
 	return (<>
 		<div className="projectsPageGrid">
 			<div className="projectsPageGrid--title">Projects
-				{revPieces.map((piece,index)=>{
+				{/*{revPieces.map((piece,index)=>{
 					console.log(index);
 					
-					return (<div className="projectsPageGrid--title_buttons" ref={addFirstLetterRefs} key={index}>{index}</div>)
+					return (<AnchorLink href={`#${piece.id}`} className="projectsPageGrid--title_buttons" ref={addFirstLetterRefs} key={index}>{index}</AnchorLink>)
 					
-				})}
+				})}   */}
 			</div>
 			<div className="projectsArea">
 				{pieces.map((piece,index)=>{
 					
 					return (<>
-						<div className="projectsComponent" key={piece.index}>
+						<div className="projectsComponent" id={piece.id} key={piece.index}>
 							<div className="projectsComponent--descriptionSection">
 								<h2>Goal:</h2>
 								<div className="projectsComponent--descriptionSection_goal">{piece.goal}</div>	

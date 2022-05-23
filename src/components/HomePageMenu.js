@@ -33,17 +33,16 @@ export default function HomePageMenu(){
   //////////////////////allLetters///////////////////////////
   const allLetters = [projectLetters,theDojoLetters,aboutMeLetters];
   ///////////////////////////////////////////////////////
-  const projectNavigation = useNavigate();
-  const theDojoNavigation = useNavigate();
-  const aboutMeNavigation = useNavigate();
+  var projectNavigation = useNavigate();
+  var theDojoNavigation = useNavigate();
+  var aboutMeNavigation = useNavigate();
   useEffect(()=>{
     const primaryMenuColor = getComputedStyle(document.documentElement).getPropertyValue('--menuLetters');
     const highlightMenuColor = getComputedStyle(document.documentElement).getPropertyValue('--highlightMenuLetters');
-    const abortController = new AbortController();
 
-    function randomTimer(){
-          return gsap.utils.random(3000,7000);
-    }
+    // function randomTimer(){
+    //       return gsap.utils.random(3000,7000);
+    // }
 
     const tl = gsap.timeline({
       paused: false,
@@ -90,49 +89,59 @@ export default function HomePageMenu(){
       duration:3,
       ease: "power1.inOut",
       onComplete: function(){ 
-        projectLetters.map((pL)=>{
-          pL.addEventListener("mouseenter",()=>{
+        projectLetters.map(function(pL){
+          pL.addEventListener("mouseenter",function(){
             pL.classList.remove("menuButton")
             pL.classList.add("menuButtonHover")
+            
           })
-          pL.addEventListener("mouseleave",()=>{
+          pL.addEventListener("mouseleave",function(){
             pL.classList.remove("menuButtonHover")
             pL.classList.add("menuButton")
+            return;
           })
-          pL.addEventListener("click",()=>{
-            projectNavigation('/projects');
+          pL.addEventListener("click",function(){
+            return projectNavigation('/projects');
           })
+          return;
         })
+        return;
       }
     },"<")
+    /////////////////////////////////////////////////////////
     const dojoAnimation = tl.from(["#thedojo-letter-d","#thedojo-letter-o","#thedojo-letter-j","#thedojo-letter-o2"],{
-      x:-100,
-      opacity:0,
-      duration: .35
+      autoAlpha: 0,
+      duration: .35,
+      x:-100      
     },"-=.75")
     .from(["#thedojo-letter-t","#thedojo-letter-h","#thedojo-letter-e"],{
-      x:-100,
-      opacity:0,
+      autoAlpha: 0,
       duration:.5,
+      x:-100,
       stagger: {
         amount: .235,
         from:"end",
         ease: "power1.inOut"
       }
     },"-=.65")
-    dojoAnimation.eventCallback("onComplete",()=>{
-      theDojoLetters.map((dL)=>{
-          dL.addEventListener("click",()=>{
-            theDojoNavigation('/the-dojo');
+    dojoAnimation.eventCallback("onComplete",function(){
+      // theDojoLetters.map(function(dL){
+        ["#thedojo-letter-d","#thedojo-letter-o","#thedojo-letter-j","#thedojo-letter-o2","#thedojo-letter-t","#thedojo-letter-h","#thedojo-letter-e"].map(function(dL){
+          dL.addEventListener("click",function(){
+            console.log("CLICKT")
+            return theDojoNavigation('/the-dojo');
           })
+          return;
       })
+      return;
     })
     tl.addLabel('aboutme',"+=0");
+    ///////////////////////////////////////////////////////
     const aboutMeAnimation = tl.from(["#aboutme-letter-a","#aboutme-letter-b","#aboutme-letter-o","#aboutme-letter-u","#aboutme-letter-t","#aboutme-letter-m","#aboutme-letter-e"],{
-      opacity: 0,
+      autoAlpha: 0,
+      duration: 1.25,
       scale:.5,
-      ease: "elastic.out(1.75, 1)",
-      duration: 1.25
+      ease: "elastic.out(1.75, 1)"
     },"+=.05")
     aboutMeAnimation.eventCallback("onComplete",()=>{
       aboutMeLetters.map((aL)=>{
@@ -142,7 +151,8 @@ export default function HomePageMenu(){
       })
     })
     tl.to(allLetters,{
-      fill: highlightMenuColor,       
+      // fill: highlightMenuColor,       
+      fill: "white",
       duration: 1,
       stagger: {
         each: 0.075,
@@ -164,13 +174,10 @@ export default function HomePageMenu(){
       return gsap.effects.menuFlash(allLetters);
     })
 
-    
-    // return ()=>{
-    //   abortController.abort(); 
-    // } 
 
-  },[]);
+  });
   return (<>
+    
     <svg  id="homePageMenu" width="770" height="512" version="1.1" viewBox="0 0 204 136" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="projects-gradient" gradientTransform="rotate(90)" >
