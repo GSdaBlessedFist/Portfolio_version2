@@ -10,11 +10,11 @@
 						 "thedojo";
 	box-shadow: 5px 15px 25px 2px hsla(0,100%,0%,.15);
 
-	&--title{
+	&__title{
 		@include mainFont;
 		font-size: 150px;
 		padding: auto 0px;
-		&_buttons{
+		&--buttons{
 			grid-area: title;
 			display: inline;
 			float: right;

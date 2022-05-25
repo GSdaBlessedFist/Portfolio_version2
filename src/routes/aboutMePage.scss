@@ -9,7 +9,7 @@
 	grid-template-areas: "title"
 						 "contentArea";
 	box-shadow: 5px 15px 25px 2px hsla(0,100%,0%,.15);
-	&--title{
+	&__title{
 		grid-area: title;
 		@include minorFont;
 		display: inline;
@@ -17,56 +17,47 @@
 		padding: auto 0px;
 		border: 1px red solid;
 	}
-	&--content-area{
+	&__contentArea{
 		grid-area: contentArea;
 		display: grid;
-		
 		grid-template-columns: 70% 30%;
 		grid-template-areas: "text pic";
 		@include minorFont;
-		&_text{
+		&--text{
 			grid-area: text;
-			display: grid;
-			grid-template-rows: "30px 30px 30px auto auto";
-			grid-template-areas: "personalTitle"
-								 "personalText"
-								 "professionalTitle"
-								 "professionalText"
-								 "techs";
-			border: 1px red solid;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: space-between;
+			//border: 10px red solid;
 			padding: 10px;
-			&---personal-title{
-					grid-area: personalTitle;
-					border: 1px yellow dashed;
-					height: 30px;
-					font-size: 30px;
+				& div{
+					padding: 0px  10px;
+					font-size: 1.075rem;
+					> h2{
+						color: orange;
+					}
 				}
-				&---personal-text{
-					grid-area: personalText;
-					border: 1px red dashed;
-					font-size: 1.5rem;
+				&___personal{
+					flex-grow:1;
+					//border: 8px red solid;
+					border-bottom: 8px red solid;
 				}
-				&---professional-title{
-					grid-area: professionalTitle;
-					border: 1px yellow dashed;
-					font-size: 30px;
+				&___professional{
+					flex-grow:1;
+//					border: 6px orange solid;
 				}
-				&---professional-text{
-					grid-area: professionalText;
-					border: 1px red dashed;
-				}
-				&---tech-area{
+				&___tech-area{
+					flex-grow:1;
 					display:flex;
 					align-items: center;
 					width: 100%;
 					height: 50px;
-					border: 2px red solid;
-					&--box{
-						border: 2px red solid;
-					}
+//					border: 4px yellow solid;
 				}
 		}
-		&_pic{
+		&--pic{
 			border: 1px red solid;
 		}
 	}
