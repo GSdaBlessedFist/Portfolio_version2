@@ -43,7 +43,7 @@ export default function HomePageMenu(){
 
   useEffect(()=>{
     const primaryMenuColor = getComputedStyle(document.documentElement).getPropertyValue('--menuLetters');
-    const highlightMenuColor = getComputedStyle(document.documentElement).getPropertyValue('--highlightMenuLetters');
+    //const highlightMenuColor = getComputedStyle(document.documentElement).getPropertyValue('--highlightMenuLetters');
     
     const projectsAnimation = gsap.timeline()
       .from(projectLetters,{
@@ -58,7 +58,7 @@ export default function HomePageMenu(){
         duration:2.53,
         ease: "power1.inOut",
         onComplete: function(){ 
-          projectLetters.map(function(pL){
+          projectLetters.forEach(function(pL){
             pL.addEventListener("mouseenter",function(){
               pL.classList.remove("menuButton")
               pL.classList.add("menuButtonHover")
@@ -142,10 +142,10 @@ export default function HomePageMenu(){
 
     const emailAnimation = function(){
       let emailani = gsap.timeline()
-       .to("#email-icon",{strokeDashoffset:0,duration:.95})
-       .to("#email-icon",{stroke:"white",duration:.55})
-       .to("#email-icon",{stroke:primaryMenuColor,duration:.75},"-=.25");
-       //return emailani;
+        emailani.to("#email-icon",{strokeDashoffset:0,duration:.95})
+        .to("#email-icon",{stroke:"white",duration:.55})
+        .to("#email-icon",{stroke:primaryMenuColor,duration:.75},"-=.25");
+        //return emailani;
     }
 
     const master = gsap.timeline();
@@ -154,7 +154,7 @@ export default function HomePageMenu(){
         .add(aboutMeAnimation)
         .add(letterFlashAnimation,"-=1")
         .add(emailAnimation,"-=.91")
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
 
   
