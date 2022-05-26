@@ -155,7 +155,7 @@ export default function HomePageMenu(){
         .add(letterFlashAnimation,"-=1")
         .add(emailAnimation,"-=.91")
 
-  });
+  },[]);
 
   
 
