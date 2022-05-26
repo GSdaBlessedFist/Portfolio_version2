@@ -56,26 +56,35 @@ export default function HomePageMenu(){
       .from(projectLetters,{
         autoAlpha: 0,
         duration:2.53,
-        ease: "power1.inOut",
-        onComplete: function(){ 
-          projectLetters.forEach(function(pL){
-            pL.addEventListener("mouseenter",function(){
-              pL.classList.remove("menuButton")
-              pL.classList.add("menuButtonHover")
-              
-            })
-            pL.addEventListener("mouseleave",function(){
-              pL.classList.remove("menuButtonHover")
-              pL.classList.add("menuButton")
-              return;
-            })
-            pL.addEventListener("click",function(){
-              return projectNavigation('/projects');
-            })
-          })
-          return;
-        }
+        ease: "power1.inOut"
       },"<")
+
+
+      projectLetters.forEach((pl)=>{
+        pl.addEventListener("mouseenter",function(e){
+          e.preventDefault();
+          gsap.to(projectLetters,{
+            fill: "white",
+            duration: .25
+          })
+        })
+      })
+      projectLetters.forEach((pl)=>{
+        pl.addEventListener("mouseleave",function(e){
+          e.preventDefault();
+          gsap.to(projectLetters,{
+            fill: primaryMenuColor,
+            duration: .55
+          })
+        })
+      })
+      projectLetters.forEach((pl)=>{
+        pl.addEventListener("click",function(e){
+          return projectNavigation('/projects');
+        })
+      })
+
+      
     /////////////////////////////////////////////////////////
     const dojoAnimation = gsap.timeline()
       .from(["#thedojo-letter-d","#thedojo-letter-o","#thedojo-letter-j","#thedojo-letter-o2"],{
@@ -94,16 +103,29 @@ export default function HomePageMenu(){
         }
       },"-=.65")
 
-
-    dojoAnimation.eventCallback("onComplete",function(){
-      // theDojoLetters.map(function(dL){
-        //const theDojoArr = ["#thedojo-letter-d","#thedojo-letter-o","#thedojo-letter-j","#thedojo-letter-o2","#thedojo-letter-t","#thedojo-letter-h","#thedojo-letter-e"];
-        theDojoLetters.map(function(dL){
-          return dL.addEventListener("click",()=>{theDojoNavigation('/the-dojo')})
-          
+      theDojoLetters.forEach((dl)=>{
+        dl.addEventListener("mouseenter",function(e){
+          e.preventDefault();
+          gsap.to(theDojoLetters,{
+            fill: "white",
+            duration: .25
+          })
+        })
       })
-      return;
-    })
+      theDojoLetters.forEach((dl)=>{
+        dl.addEventListener("mouseleave",function(e){
+          e.preventDefault();
+          gsap.to(theDojoLetters,{
+            fill: primaryMenuColor,
+            duration: .55
+          })
+        })
+      })
+      theDojoLetters.forEach((dl)=>{
+        dl.addEventListener("click",function(e){
+          return theDojoNavigation('/the-dojo');
+        })
+      })
 
 ///////////////////////////////////////////////////////
     const aboutMeAnimation = gsap.timeline()
@@ -113,11 +135,30 @@ export default function HomePageMenu(){
       scale:.5,
       ease: "elastic.out(1.75, 1)"
       },"+=.05")
-    aboutMeAnimation.eventCallback("onComplete",()=>{
-      aboutMeLetters.map((aL)=>{
-          return aL.addEventListener("click",()=>{aboutMeNavigation('/about-me')});
+
+      aboutMeLetters.forEach((al)=>{
+        al.addEventListener("mouseenter",function(e){
+          e.preventDefault();
+          gsap.to(aboutMeLetters,{
+            fill: "white",
+            duration: .25
+          })
+        })
       })
-    })
+      aboutMeLetters.forEach((al)=>{
+        al.addEventListener("mouseleave",function(e){
+          e.preventDefault();
+          gsap.to(aboutMeLetters,{
+            fill: primaryMenuColor,
+            duration: .55
+          })
+        })
+      })
+      aboutMeLetters.forEach((al)=>{
+        al.addEventListener("click",function(e){
+          return aboutMeNavigation('/about-me');
+        })
+      })
 
 ////////////////////////////////////////////////////////    
     const letterFlashAnimation = gsap.timeline()
@@ -200,9 +241,6 @@ export default function HomePageMenu(){
         <path id="aboutme-letter-m" className={"menuButton"} ref={addAboutMeRefs} d="m226 144v-14h11q0.9 0 1.4 0.6 0.6 0.6 0.6 1.4v12h-2.6v-10q0-0.4-0.3-0.7t-0.7-0.3h-1.6v11h-2.6v-10q0-0.4-0.3-0.7t-0.7-0.3h-1.6v11z"/>
         <path id="aboutme-letter-e" className={"menuButton"} ref={addAboutMeRefs} d="m243 144q-0.8 0-1.4-0.6t-0.6-1.4v-9.8q0-0.9 0.6-1.4 0.6-0.6 1.4-0.6h3.8q0.8 0 1.4 0.6 0.6 0.5 0.6 1.4v4.2q0 0.8-0.6 1.4t-1.4 0.6h-3.2v2q0 0.4 0.3 0.7t0.7 0.3h3.6l0.6 2.6zm0.6-8.2h1.6q0.4 0 0.7-0.3t0.3-0.7v-1q0-0.4-0.3-0.7t-0.7-0.3h-0.6q-0.4 0-0.7 0.3t-0.3 0.7z"/>
        </g>
-       {/*<g  transformOrigin="center center" transform="scale(3) translate(75,0)">
-        <path id="email-icon" d="m 128.9,105.5 v 19.8 h 32.5 v -19.8 l -30.6,0.2 14.6,13.3 14.1,-13.3" fill="none" stroke="red" strokeWidth="2.5"/>      
-      </g>*/}
       
         <path id="email-icon" d="m 128.9,105.5 v 19.8 h 32.5 v -19.8 l -30.6,0.2 14.6,13.3 14.1,-13.3" fill="none" strokeWidth="2.5"/>      
       
