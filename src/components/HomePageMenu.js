@@ -4,6 +4,8 @@ import {gsap} from "gsap";
 import "../routes/homePage.scss"
 
 export default function HomePageMenu(){
+
+  ///////////////Projects////////////////////////////
   const projectLetterRefs = useRef([]);
         projectLetterRefs.current = [];
   var projectLetters = projectLetterRefs.current;
@@ -36,146 +38,127 @@ export default function HomePageMenu(){
   var projectNavigation = useNavigate();
   var theDojoNavigation = useNavigate();
   var aboutMeNavigation = useNavigate();
+
+  //////////////////////////////////////////////////////////
+
   useEffect(()=>{
     const primaryMenuColor = getComputedStyle(document.documentElement).getPropertyValue('--menuLetters');
     const highlightMenuColor = getComputedStyle(document.documentElement).getPropertyValue('--highlightMenuLetters');
-
-    // function randomTimer(){
-    //       return gsap.utils.random(3000,7000);
-    // }
-
-    const tl = gsap.timeline({
-      paused: false,
-      duration: .5
-    });
-    gsap.registerEffect({
-            name: "menuFlash",
-            effect: function(targets, config) {
-                let tl = gsap.timeline({});
-                tl.to(targets, {
-                    fill: highlightMenuColor,
-                    duration: .65,
-                    stagger: {
-                        each: 0.075,
-                        ease: "slow(0.7, 0.7, false)",
-                        from: "end"
-                    }
-                })
-                tl.to(allLetters, {
-                    fill: primaryMenuColor,
-                    duration: .5,
-                    stagger: {
-                        each: 0.075,
-                        ease: "slow(0.7, 0.7, false)",
-                        from: "end"
-                    }
-                })
-                //abortController();
-                return tl;
-            },
-            defaults: {duration: 2}, 
-            extendTimeline: true
-    })
-
-    const projectsAnimation = tl.from(projectLetters,{
-      x:300,
-      duration: 1,
-      scale: .5,
-      stagger: .25,
-      ease: "back(1)"
-    })
-    .from(projectLetters,{
-      autoAlpha: 0,
-      duration:3,
-      ease: "power1.inOut",
-      onComplete: function(){ 
-        projectLetters.map(function(pL){
-          pL.addEventListener("mouseenter",function(){
-            pL.classList.remove("menuButton")
-            pL.classList.add("menuButtonHover")
-            
-          })
-          pL.addEventListener("mouseleave",function(){
-            pL.classList.remove("menuButtonHover")
-            pL.classList.add("menuButton")
-            return;
-          })
-          pL.addEventListener("click",function(){
-            return projectNavigation('/projects');
+    
+    const projectsAnimation = gsap.timeline()
+      .from(projectLetters,{
+        x:300,
+        duration: 1,
+        scale: .5,
+        stagger: .25,
+        ease: "back(1)"
+      })
+      .from(projectLetters,{
+        autoAlpha: 0,
+        duration:2.53,
+        ease: "power1.inOut",
+        onComplete: function(){ 
+          projectLetters.map(function(pL){
+            pL.addEventListener("mouseenter",function(){
+              pL.classList.remove("menuButton")
+              pL.classList.add("menuButtonHover")
+              
+            })
+            pL.addEventListener("mouseleave",function(){
+              pL.classList.remove("menuButtonHover")
+              pL.classList.add("menuButton")
+              return;
+            })
+            pL.addEventListener("click",function(){
+              return projectNavigation('/projects');
+            })
           })
           return;
-        })
-        return;
-      }
-    },"<")
+        }
+      },"<")
     /////////////////////////////////////////////////////////
-    const dojoAnimation = tl.from(["#thedojo-letter-d","#thedojo-letter-o","#thedojo-letter-j","#thedojo-letter-o2"],{
-      autoAlpha: 0,
-      duration: .35,
-      x:-100      
-    },"-=.75")
-    .from(["#thedojo-letter-t","#thedojo-letter-h","#thedojo-letter-e"],{
-      autoAlpha: 0,
-      duration:.5,
-      x:-100,
-      stagger: {
-        amount: .235,
-        from:"end",
-        ease: "power1.inOut"
-      }
-    },"-=.65")
+    const dojoAnimation = gsap.timeline()
+      .from(["#thedojo-letter-d","#thedojo-letter-o","#thedojo-letter-j","#thedojo-letter-o2"],{
+        autoAlpha: 0,
+        duration: .35,
+        x:-100      
+        },"-=.75")
+      .from(["#thedojo-letter-t","#thedojo-letter-h","#thedojo-letter-e"],{
+        autoAlpha: 0,
+        duration:.5,
+        x:-100,
+        stagger: {
+          amount: .235,
+          from:"end",
+          ease: "power1.inOut"
+        }
+      },"-=.65")
+
+
     dojoAnimation.eventCallback("onComplete",function(){
       // theDojoLetters.map(function(dL){
-        ["#thedojo-letter-d","#thedojo-letter-o","#thedojo-letter-j","#thedojo-letter-o2","#thedojo-letter-t","#thedojo-letter-h","#thedojo-letter-e"].map(function(dL){
-          dL.addEventListener("click",function(){
-            console.log("CLICKT")
-            return theDojoNavigation('/the-dojo');
-          })
-          return;
+        //const theDojoArr = ["#thedojo-letter-d","#thedojo-letter-o","#thedojo-letter-j","#thedojo-letter-o2","#thedojo-letter-t","#thedojo-letter-h","#thedojo-letter-e"];
+        theDojoLetters.map(function(dL){
+          return dL.addEventListener("click",()=>{theDojoNavigation('/the-dojo')})
+          
       })
       return;
     })
-    tl.addLabel('aboutme',"+=0");
-    ///////////////////////////////////////////////////////
-    const aboutMeAnimation = tl.from(["#aboutme-letter-a","#aboutme-letter-b","#aboutme-letter-o","#aboutme-letter-u","#aboutme-letter-t","#aboutme-letter-m","#aboutme-letter-e"],{
+
+///////////////////////////////////////////////////////
+    const aboutMeAnimation = gsap.timeline()
+      .from(["#aboutme-letter-a","#aboutme-letter-b","#aboutme-letter-o","#aboutme-letter-u","#aboutme-letter-t","#aboutme-letter-m","#aboutme-letter-e"],{
       autoAlpha: 0,
       duration: 1.25,
       scale:.5,
       ease: "elastic.out(1.75, 1)"
-    },"+=.05")
+      },"+=.05")
     aboutMeAnimation.eventCallback("onComplete",()=>{
       aboutMeLetters.map((aL)=>{
-          aL.addEventListener("click",()=>{
-            aboutMeNavigation('/about-me');
-          })
+          return aL.addEventListener("click",()=>{aboutMeNavigation('/about-me')});
       })
     })
-    tl.to(allLetters,{
-      // fill: highlightMenuColor,       
-      fill: "white",
-      duration: 1,
-      stagger: {
-        each: 0.075,
-        ease: "slow(0.7, 0.7, false)",
-        from: "end"
-      }
-    },"-=.15")
-    .to(allLetters,{
-      fill: primaryMenuColor,
-      duration: .5,
-      stagger: {
-        each: 0.075,
-        ease: "slow(0.7, 0.7, false)",
-        from: "end"
-      }
-    },"-=2")
 
-    gsap.delayedCall(4,function(){
-      return gsap.effects.menuFlash(allLetters);
-    })
+////////////////////////////////////////////////////////    
+    const letterFlashAnimation = gsap.timeline()
+      .to(allLetters,{      
+        fill: "white",
+        duration: .75,
+        stagger: {
+          each: 0.075,
+          ease: "slow(0.7, 0.7, false)",
+          from: "end"
+        }
+      },"-=.15")
+      .to(allLetters,{
+        fill: primaryMenuColor,
+        duration: .35,
+        stagger: {
+          each: 0.075,
+          ease: "slow(0.7, 0.7, false)",
+          from: "end"
+        }
+      },"-=1.85")
 
+    const emailAnimation = function(){
+      let emailani = gsap.timeline()
+       .to("#email-icon",{strokeDashoffset:0,duration:.95})
+       .to("#email-icon",{stroke:"white",duration:.55})
+       .to("#email-icon",{stroke:primaryMenuColor,duration:.75},"-=.25");
+       //return emailani;
+    }
+
+    const master = gsap.timeline();
+    master.add(projectsAnimation)
+        .add(dojoAnimation)
+        .add(aboutMeAnimation)
+        .add(letterFlashAnimation,"-=1")
+        .add(emailAnimation,"-=.91")
 
   });
+
+  
+
   return (<>
     
     <svg  id="homePageMenu" width="770" height="512" version="1.1" viewBox="0 0 204 136" xmlns="http://www.w3.org/2000/svg">
@@ -217,7 +200,12 @@ export default function HomePageMenu(){
         <path id="aboutme-letter-m" className={"menuButton"} ref={addAboutMeRefs} d="m226 144v-14h11q0.9 0 1.4 0.6 0.6 0.6 0.6 1.4v12h-2.6v-10q0-0.4-0.3-0.7t-0.7-0.3h-1.6v11h-2.6v-10q0-0.4-0.3-0.7t-0.7-0.3h-1.6v11z"/>
         <path id="aboutme-letter-e" className={"menuButton"} ref={addAboutMeRefs} d="m243 144q-0.8 0-1.4-0.6t-0.6-1.4v-9.8q0-0.9 0.6-1.4 0.6-0.6 1.4-0.6h3.8q0.8 0 1.4 0.6 0.6 0.5 0.6 1.4v4.2q0 0.8-0.6 1.4t-1.4 0.6h-3.2v2q0 0.4 0.3 0.7t0.7 0.3h3.6l0.6 2.6zm0.6-8.2h1.6q0.4 0 0.7-0.3t0.3-0.7v-1q0-0.4-0.3-0.7t-0.7-0.3h-0.6q-0.4 0-0.7 0.3t-0.3 0.7z"/>
        </g>
-       <path id="email-icon" d="m192 108-14 13-15-13zm-31-0.2h32v20h-32z" fill="none" stroke="#000" strokeWidth="2" />
+       {/*<g  transformOrigin="center center" transform="scale(3) translate(75,0)">
+        <path id="email-icon" d="m 128.9,105.5 v 19.8 h 32.5 v -19.8 l -30.6,0.2 14.6,13.3 14.1,-13.3" fill="none" stroke="red" strokeWidth="2.5"/>      
+      </g>*/}
+      
+        <path id="email-icon" d="m 128.9,105.5 v 19.8 h 32.5 v -19.8 l -30.6,0.2 14.6,13.3 14.1,-13.3" fill="none" strokeWidth="2.5"/>      
+      
       </svg>
   </>)
 }

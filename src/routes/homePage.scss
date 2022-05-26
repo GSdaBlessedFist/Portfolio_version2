@@ -22,7 +22,7 @@
 }
 #homePageMenu{
 	position: absolute;
-	right: clamp(15%, 18%, 500px);
+	right: clamp(15%, 18%, 250px);
 	transform-origin: 100% 0%;
 	transform: scale(1.35)
 	/*outline: 2px red solid;*/
@@ -46,4 +46,12 @@
 }
 #aboutme-link{
 	transform-origin: 50% 50%;
+}
+#email-icon{
+  stroke-dashoffset:172;
+  stroke-dasharray: 172;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  transform: translate(32px,5px);
+  stroke: $menuLetters;
 }

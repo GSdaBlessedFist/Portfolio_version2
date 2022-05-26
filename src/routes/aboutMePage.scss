@@ -34,19 +34,19 @@
 			padding: 10px;
 				& div{
 					padding: 0px  10px;
-					font-size: 1.075rem;
-					> h2{
+					font-size: 1.45rem;
+					& > h2{
 						color: orange;
+					}
+					&>p{
+						padding-bottom: 2rem;
 					}
 				}
 				&___personal{
-					flex-grow:1;
-					//border: 8px red solid;
-					border-bottom: 8px red solid;
+					border-bottom: 15px hsla(0,50%,0%,.25) solid;
 				}
 				&___professional{
-					flex-grow:1;
-//					border: 6px orange solid;
+//					border-bottom: 15px hsla(0,50%,0%,.25) solid;
 				}
 				&___tech-area{
 					flex-grow:1;
