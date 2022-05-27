@@ -13,7 +13,7 @@ const bgLightColor = getComputedStyle(document.documentElement).getPropertyValue
 
 export default function HomePageMenu(){
 
-  const [modalIsOpen, setIsOpen] = useState(true);
+  const [modalIsOpen, setIsOpen] = useState(false);
   function openModal() {setIsOpen(true)}
   function closeModal() {setIsOpen(false)}
   function afterOpenModal() {return null;}
@@ -254,8 +254,8 @@ export default function HomePageMenu(){
         <path id="aboutme-letter-e" className={"menuButton"} ref={addAboutMeRefs} d="m243 144q-0.8 0-1.4-0.6t-0.6-1.4v-9.8q0-0.9 0.6-1.4 0.6-0.6 1.4-0.6h3.8q0.8 0 1.4 0.6 0.6 0.5 0.6 1.4v4.2q0 0.8-0.6 1.4t-1.4 0.6h-3.2v2q0 0.4 0.3 0.7t0.7 0.3h3.6l0.6 2.6zm0.6-8.2h1.6q0.4 0 0.7-0.3t0.3-0.7v-1q0-0.4-0.3-0.7t-0.7-0.3h-0.6q-0.4 0-0.7 0.3t-0.3 0.7z"/>
        </g>
       
-        <path id="email-icon" d="m 128.9,105.5 v 19.8 h 32.5 v -19.8 l -30.6,0.2 14.6,13.3 14.1,-13.3" fill="none" strokeWidth="2.5"/>      
-        
+        <path id="email-icon" d="m 128.9,105.5 v 19.8 h 32.5 v -19.8 l -30.6,0.2 14.6,13.3 14.1,-13.3" fill="none" strokeWidth="2.5" />      
+        <rect id="email-hotspot" x="160" y="110" height="20" width="32.5" onClick={openModal}/>
       </svg>
       <Modal isOpen={modalIsOpen} onAfterOpen={afterOpenModal} onRequestClose={closeModal} style={{
         overlay: {
