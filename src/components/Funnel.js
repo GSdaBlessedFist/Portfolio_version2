@@ -48,7 +48,7 @@ export default function Funnel(){
   },[])
   const funnelBGcolor = getComputedStyle(document.documentElement).getPropertyValue("--bg");
 	return <>
-    <svg version="1.1" id="funnels"  viewBox="0 0 1920 1080">  
+    <svg version="1.1" id="funnels"  viewBox="0 0 1920 1080" preserveAspectRatio="xMinYMax ">  
       <defs>
         <radialGradient id = "funnelBGgradient" cx = "17%" cy = "32%" r = "50%">
             <stop stopColor = "black" offset = "0%"/>

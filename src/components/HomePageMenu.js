@@ -1,9 +1,22 @@
-import {useEffect,useRef} from "react";
+import {useEffect,useState,useRef} from "react";
 import { useNavigate } from "react-router-dom";
 import {gsap} from "gsap";
 import "../routes/homePage.scss"
+import Modal from 'react-modal';
+import Contact from "./Contact";
+
+Modal.setAppElement('#root');
+
+const primaryMenuColor = getComputedStyle(document.documentElement).getPropertyValue('--menuLetters');
+const bgLightColor = getComputedStyle(document.documentElement).getPropertyValue('--bgLight');
+    //const highlightMenuColor = getComputedStyle(document.documentElement).getPropertyValue('--highlightMenuLetters');
 
 export default function HomePageMenu(){
+
+  const [modalIsOpen, setIsOpen] = useState(true);
+  function openModal() {setIsOpen(true)}
+  function closeModal() {setIsOpen(false)}
+  function afterOpenModal() {return null;}
 
   ///////////////Projects////////////////////////////
   const projectLetterRefs = useRef([]);
@@ -42,8 +55,7 @@ export default function HomePageMenu(){
   //////////////////////////////////////////////////////////
 
   useEffect(()=>{
-    const primaryMenuColor = getComputedStyle(document.documentElement).getPropertyValue('--menuLetters');
-    //const highlightMenuColor = getComputedStyle(document.documentElement).getPropertyValue('--highlightMenuLetters');
+    
     
     const projectsAnimation = gsap.timeline()
       .from(projectLetters,{
@@ -243,7 +255,27 @@ export default function HomePageMenu(){
        </g>
       
         <path id="email-icon" d="m 128.9,105.5 v 19.8 h 32.5 v -19.8 l -30.6,0.2 14.6,13.3 14.1,-13.3" fill="none" strokeWidth="2.5"/>      
-      
+        
       </svg>
+      <Modal isOpen={modalIsOpen} onAfterOpen={afterOpenModal} onRequestClose={closeModal} style={{
+        overlay: {
+          backgroundColor: 'rgba(0,0,0,.5)',
+          width: '100%',
+          height: "91vh",
+          position: "absolute",
+          top: "50px"
+        },
+        content: {
+          position: "relative",
+          top: "25%",
+          left:"15%",
+          color: 'lightsteelblue',
+          backgroundColor: 'hsla(240, 25%, 54%,.25)',
+          width: '650px',
+          height: "50vh",
+        }
+      }}>
+        <Contact/>
+      </Modal>
   </>)
 }

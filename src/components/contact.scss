@@ -1,0 +1,24 @@
+@import "../global";
+
+form{
+	display: flex;
+	flex-direction: column;
+	padding: 15px;
+}
+input{
+	line-height: 2rem;
+	margin: 10px 0px;
+}
+label{
+	font-size: 2rem;
+	color: orange;
+}
+[name="message"]{
+	padding: 20px;
+	@include minorFont;
+	font-size: 2rem;
+}
+#sendButton{
+	margin-top: 20px;
+	background: $bgLight;
+}

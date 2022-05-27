@@ -2,6 +2,7 @@ import "./homePage.scss";
 import HomePageMenu from "../components/HomePageMenu";
 import Funnel from "../components/Funnel";
 
+
 export default function HomePage(){
 	
 	return (
