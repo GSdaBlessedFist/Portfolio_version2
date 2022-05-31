@@ -3,22 +3,41 @@
 form{
 	display: flex;
 	flex-direction: column;
-	padding: 15px;
+	padding: 10px;
+	& div{
+		display: flex;
+		flex-direction: column;
+		padding: 10px;
+	}
 }
 input{
 	line-height: 2rem;
 	margin: 10px 0px;
+	padding: 10px;
+	font-size: 1.5rem;
+	background: rgba(255,255,255,.15);
+	color: orange;
 }
 label{
 	font-size: 2rem;
-	color: orange;
+	color: white;
 }
 [name="message"]{
 	padding: 20px;
 	@include minorFont;
-	font-size: 2rem;
+	font-size: 1.5rem;
+	background: rgba(255,255,255,.15);
+	color: orange;
 }
 #sendButton{
-	margin-top: 20px;
+	position: absolute;
+	bottom: 5px;
+	right: 10px;
+	padding: 10px;
+	margin: 15px;
+	border-radius: 0%;
 	background: $bgLight;
+	color: white;
+	font-size: 1.5rem;
+	@include mainFont;
 }

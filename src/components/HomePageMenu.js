@@ -257,6 +257,8 @@ export default function HomePageMenu(){
         <path id="email-icon" d="m 128.9,105.5 v 19.8 h 32.5 v -19.8 l -30.6,0.2 14.6,13.3 14.1,-13.3" fill="none" strokeWidth="2.5" />      
         <rect id="email-hotspot" x="160" y="110" height="20" width="32.5" onClick={openModal}/>
       </svg>
+
+    {/*----------EMAIL MODAL--------*/}
       <Modal isOpen={modalIsOpen} onAfterOpen={afterOpenModal} onRequestClose={closeModal} style={{
         overlay: {
           backgroundColor: 'rgba(0,0,0,.5)',
@@ -272,7 +274,7 @@ export default function HomePageMenu(){
           color: 'lightsteelblue',
           backgroundColor: 'hsla(240, 25%, 54%,.25)',
           width: '650px',
-          height: "50vh",
+          height: "500px",
         }
       }}>
         <Contact/>
