@@ -1,6 +1,16 @@
 
 const projectInfo = [
 	{
+		id: "bonsai-haiku",
+		name: "a-bonsai-haiku",
+		goal: "I wanted to create a minimalist yet interactive interface to present a haiku I found.",
+		description: "This page was created using the TailWindCSS library and animated with GSAP.",
+		techStack: "TailWindCSS, GSAP and SVG",
+		screenShot: "images/bonsai-haiku-screenshot.png",
+		url: "https://bonsai-haiku.herokuapp.com/",
+		git: "https://github.com/GSdaBlessedFist/bonsai-haiku"
+	},
+	{
 		id: "aftercall-excerpt",
 		name: "Aftercall-excerpt",
 		goal: "The goal was to create an interactive storyline using the GreenSock library.",
@@ -20,16 +30,6 @@ const projectInfo = [
 		url: "https://tmdb-movie-search-cxueep507-gsdablessedfist.vercel.app/",
 		git: "https://github.com/GSdaBlessedFist/TMDB-Movie-Search"
 	},
-	// {
-	// 	id: "beyond-the-keys",
-	// 	name: "Beyond-the-Keys: Binary Horrorcast",
-	// 	goal: "I wanted to create a minimalist interface for a horror story site.",
-	// 	description: "This Gatsby page is for a collection of upcoming stories and artwork. THe files are rendered using markdown syntax.",
-	// 	techStack: "SCSS, Gatsby and SVG",
-	// 	screenShot: "images/beyond-the-keys-screenshot.png",
-	// 	url: "https://codepen.io/GuyShifty/pen/xxYwOwK/?layout=left",
-	// 	git: "https://codepen.io/GuyShifty/pen/xxYwOwK/?layout=left"
-	// },
 	{
 		id: "simple-cosmic-blog",
 		name: "simple-cosmic-blog",

@@ -9,11 +9,11 @@
 }
 
 :root{
-	--bgLight: hsl(240, 25%, 54%);/*teal*/
-	--bg: #3d6999;/*hsl(240, 25%, 34%);teal*/	
-	--bgDark: hsl(240, 10%, 14%);/*teal*/
-	--menuLetters: #ff6b40;/*hsla(20,50%,60%,1); hsla(22,100%,50%,.75)*/
-	--highlightMenuLetters: hsla(20,50%,80%,.75);/*hsla(22,100%,70%,.75)*/
+	--bgLight: #7684AA;
+	--bg: #4E5E7E;	/*keep*/
+	--bgDark: #283A52;/*teal*/
+	--menuLetters: #C4CFE8;/*hsla(20,50%,60%,1); hsla(22,100%,50%,.75)*/
+	--highlightMenuLetters: #F2F2F1;/*hsla(22,100%,70%,.75)*/
 }
 
 $bg : var(--bg);
