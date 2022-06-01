@@ -16,11 +16,18 @@ input{
 	padding: 10px;
 	font-size: 1.5rem;
 	background: rgba(255,255,255,.15);
+	border: none;
 	color: orange;
 }
 label{
 	font-size: 2rem;
 	color: white;
+	@include minorFont;
+
+}
+textarea{
+	margin: 10px 0px;
+	border: none;
 }
 [name="message"]{
 	padding: 20px;

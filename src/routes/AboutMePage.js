@@ -5,7 +5,7 @@ export default function AboutMePage(){
 	// aboutMeInfo[0=techs,1=graphic,2[0]=text] //
 	// aboutMeInfo[2][0].personal
 
-	console.log(JSON.stringify(aboutMeInfo));
+	console.log(JSON.stringify(professionalText));
 	return (<>
 		<div className="aboutMePageGrid">
 			<div className="aboutMePageGrid__title">about me</div>

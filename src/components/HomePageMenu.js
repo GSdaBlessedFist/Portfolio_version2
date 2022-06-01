@@ -9,7 +9,6 @@ Modal.setAppElement('#root');
 
 const primaryMenuColor = getComputedStyle(document.documentElement).getPropertyValue('--menuLetters');
 const bgLightColor = getComputedStyle(document.documentElement).getPropertyValue('--bgLight');
-    //const highlightMenuColor = getComputedStyle(document.documentElement).getPropertyValue('--highlightMenuLetters');
 
 export default function HomePageMenu(){
 
@@ -272,7 +271,7 @@ export default function HomePageMenu(){
           top: "25%",
           left:"15%",
           color: 'lightsteelblue',
-          backgroundColor: 'hsla(240, 25%, 54%,.25)',
+          backgroundColor: 'hsla(219, 23%, 40%,.25)',
           width: '650px',
           height: "500px",
         }

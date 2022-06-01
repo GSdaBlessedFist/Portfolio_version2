@@ -1,19 +1,21 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Odibee+Sans&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Odibee+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Raleway:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @mixin mainFont{
 	font-family: 'Bangers', cursive;
 }
 @mixin minorFont{
 	/*font-family: 'Odibee Sans', cursive;*/
-	font-family: 'Raleway', sans-serif;
+	/*font-family: 'Raleway', sans-serif;*/
+	font-family: 'Oswald', sans-serif;
 }
 
 :root{
 	--bgLight: #7684AA;
-	--bg: #4E5E7E;	/*keep*/
-	--bgDark: #283A52;/*teal*/
-	--menuLetters: #C4CFE8;/*hsla(20,50%,60%,1); hsla(22,100%,50%,.75)*/
-	--highlightMenuLetters: #F2F2F1;/*hsla(22,100%,70%,.75)*/
+	--bg: #4E5E7E;/*hsla(219, 23, 40,.5)*/
+	--bgDark: #283A52;
+	--menuLetters: #C4CFE8;/*hsla(62,44%,84%,.5)*/
+	--highlightMenuLetters: #F2F2F1;
 }
 
 $bg : var(--bg);
