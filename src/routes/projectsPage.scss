@@ -14,6 +14,8 @@
 		@include mainFont;
 		font-size: 150px;
 		padding: auto 0px;
+		/*border-bottom: $highlightMenuLetters;*/
+		border-bottom: white;
 		&--buttons{
 			grid-area: title;
 			display: inline;
