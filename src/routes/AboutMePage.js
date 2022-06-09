@@ -1,11 +1,28 @@
+import {useEffect,useRef, useState} from "react";
+import gsap from "gsap";
 import {aboutMeInfo,personalText,professionalText} from "../aboutMeInfo.js";
 import "./aboutMePage.scss";
+import AboutMePicSVG from "../components/AboutMePicSVG.js";
 
 export default function AboutMePage(){
-	// aboutMeInfo[0=techs,1=graphic,2[0]=text] //
-	// aboutMeInfo[2][0].personal
+	
+	const picSection = useRef();
+	var [pupilXPosition,setPupilXPosition] = useState(0);
+	var [pupilYPosition,setPupilYPosition] = useState(-1);
 
-	console.log(JSON.stringify(professionalText));
+	useEffect(()=>{
+		
+		picSection.current.addEventListener('mouseover',function(e){
+			let picXposition = e.offsetX;
+			let picYposition = e.offsetY;
+			
+			let newXPos = gsap.utils.mapRange(0,400, -4, 2,picXposition);
+			let newYPos = gsap.utils.mapRange(0,720, -3, 1,picYposition);
+			setPupilXPosition(newXPos);
+			setPupilYPosition(newYPos);
+		})
+
+	},[pupilXPosition,pupilYPosition])
 	
 	return (<>
 		<div className="aboutMePageGrid">
@@ -25,12 +42,15 @@ export default function AboutMePage(){
 						</div>
 					</div>
 					<div className="aboutMePageGrid__contentArea--text___tech-area">
-						{aboutMeInfo.map((info)=>{
+						{aboutMeInfo.forEach((info)=>{
 							<div className="aboutMePageGrid__contentArea--text___tech-area"></div>
 						})}
 					</div>
 				</div>
-				<div className="aboutMePageGrid__contentArea--pic">picture goes here</div>
+				<div className="aboutMePageGrid__contentArea--pic" ref={picSection}>
+				<AboutMePicSVG pupilXPosition={pupilXPosition} pupilYPosition={pupilYPosition}/>
+
+				</div>
 			</div>
 		</div>
 	</>)

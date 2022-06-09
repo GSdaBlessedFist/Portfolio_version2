@@ -55,7 +55,7 @@ export default function HomePageMenu(){
 
   useEffect(()=>{
     
-    
+    gsap.ticker.fps(30);
     const projectsAnimation = gsap.timeline()
       .from(projectLetters,{
         x:300,
@@ -110,9 +110,9 @@ export default function HomePageMenu(){
         stagger: {
           amount: .235,
           from:"end",
-          ease: "power1.inOut"
+          ease: "power4.inOut"
         }
-      },"-=.65")
+      },"-=.3")
 
       theDojoLetters.forEach((dl)=>{
         dl.addEventListener("mouseenter",function(e){

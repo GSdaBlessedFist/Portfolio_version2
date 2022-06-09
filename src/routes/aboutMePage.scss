@@ -15,7 +15,7 @@
 		display: inline;
 		font-size: 60px;
 		padding: auto 0px;
-		border: 1px red solid;
+		/*border: 1px red solid;*/
 	}
 	&__contentArea{
 		grid-area: contentArea;
@@ -30,11 +30,11 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: space-between;
-			//border: 10px red solid;
-			padding: 10px;
+			/*border: 10px red solid;*/
+			/*padding: 10px;*/
 				& div{
-					padding: 0px  10px;
-					font-size: 1.45rem;
+					padding: 0px 10px;
+					font-size: 1.35rem;
 					& > h2{
 						color: $highlightMenuLetters;
 					}
@@ -58,7 +58,9 @@
 				}
 		}
 		&--pic{
-			border: 1px red solid;
+			grid-area: pic;
+			height: 720px;
+			/*border: 1px red solid;*/
 		}
 	}
 }
