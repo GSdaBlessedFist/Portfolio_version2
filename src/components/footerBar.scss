@@ -13,6 +13,6 @@
 	color: $bgDark;
 	background: $bgLight;
 	&>div{
-
+		@include minorFont;
 	}
 }
