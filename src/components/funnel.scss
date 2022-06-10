@@ -20,11 +20,6 @@
 	}
 }
 
-[id^="path"] {	
-	/*filter: "url(#filter)";*/
-
-	/*mix-blend-mode:color-burn;*/
+[id^="path"] {
 	mix-blend-mode: multiply;
-	
 }
-

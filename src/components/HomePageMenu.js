@@ -55,7 +55,7 @@ export default function HomePageMenu(){
 
   useEffect(()=>{
     
-    gsap.ticker.fps(30);
+    
     const projectsAnimation = gsap.timeline()
       .from(projectLetters,{
         x:300,

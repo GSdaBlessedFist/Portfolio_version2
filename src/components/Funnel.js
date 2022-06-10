@@ -4,6 +4,8 @@ import "./funnel.scss";
 
 
 export default function Funnel(){
+  const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--bgLight');
+
 	const ringsRef = useRef([]);
   ringsRef.current = [];
   var rings = ringsRef.current;
@@ -13,7 +15,6 @@ export default function Funnel(){
     }
   }
   useEffect(()=>{
-
     gsap.registerEffect({
       name: "spin",
       effect: (targets, config) => {
@@ -24,12 +25,16 @@ export default function Funnel(){
     
 
     gsap.effects.spin("[id^='path']",{
-        ease:"none",
-        duration: 5,
+        ease:"power1.outIn",
+        duration: 8.5,
         rotation: -360,
-        repeat:-1,
+        repeat:0,
         transformOrigin:"center center"
     });
+
+    
+
+
     const ringFunnel = gsap.timeline({});
     ringFunnel.set("[id^='path1015']",{
       transformOrigin:"center center",
@@ -55,7 +60,7 @@ export default function Funnel(){
             <stop stopColor = {`${funnelBGcolor}`} offset = "100%"/>
         </radialGradient>
       </defs>
-      <rect id="funnelsBG" x="0" y="0" width="100%" height="100%" fill="url('#funnelBGgradient')"/>
+      <rect id="funnelsBG" x="0" y="0" width="100%" height="100%" fill={bgColor}/>
       <g id="funnels_group" fillOpacity="1" fillRule="evenodd" strokeWidth="1" >
 
         <path ref={addRingRefs} id="path1015-1-7-4" d="M299.9 175.5a167.8 169.6 0 0 0-168 170 167.8 169.6 0 0 0 168 170 167.8 169.6 0 0 0 167-170 167.8 169.6 0 0 0-167-170zm4 42a130.5 126.1 0 0 1 131 127 130.5 126.1 0 0 1-131 124 130.5 126.1 0 0 1-131-124 130.5 126.1 0 0 1 131-127z" fill="#e3e3e3"/>
