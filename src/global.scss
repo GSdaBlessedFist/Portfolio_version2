@@ -30,10 +30,12 @@ $navbarHeight : 50px;
 	/*border: 1px dashed yellow;*/
 
 }
-
+html {
+  background-color: #fff; /* even the same color will do the job */
+}
 body{
 	color: $menuLetters;
 	background: linear-gradient(to bottom,$bg,$bgDark);
-	overflow: hidden;
+	/*overflow: hidden;*/
 	height:100vh;
 }

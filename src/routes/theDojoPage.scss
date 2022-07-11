@@ -28,9 +28,12 @@
 }
 .theDojoArea{
 	grid-area: thedojo;
-	padding-bottom: 150px;
-	overflow-y: auto;
+	display: flex;
+	height: 70vh;
+	background: transparent;
+	justify-content: center;
 	scroll-behavior: smooth;
+	border: 1px red solid;
 }
 .theDojoComponent{
 
