@@ -14,7 +14,7 @@
 		margin: 0px 5px;
 		@include minorFont;
 		letter-spacing: .75px;
-		font-size: 45px;
+		font-size: 2.5rem;
 		& > a{
 			text-decoration: none;
 		}
@@ -25,8 +25,6 @@
 			@include mainFont;
 			font-size: 45px;
 			padding: 5px .75rem;
-			margin: 10px;
-			/* border: 2px solid white;*/
 			color: $menuLetters;
 			&--activeLink{
 				color: white;
@@ -46,4 +44,55 @@
 
 #portfolio{
 	color: $highlightMenuLetters;
+}
+
+@media (max-width:992px){
+	.headerBar{
+		width: 992px;
+		justify-content: space-between;
+		&-title{
+			margin: 0px 20px;
+			font-size: 2rem;
+		}
+		&-buttonGroup{
+			&-buttons{
+				font-size: 2rem;
+				margin: 10px;
+			}	
+		}
+	}
+};
+@media (max-width:768px){
+	.headerBar{
+		width: 768px;
+		justify-content: space-between;
+		&-title{
+			margin: 0px 10px;
+			font-size: 2rem;
+		}
+		&-buttonGroup{
+			&-buttons{
+				font-size: 2rem;
+				margin: 10px 2px;
+			}	
+		}
+	}
+}
+
+@media (max-width:575px){
+	.headerBar{
+		width: 575px;
+		justify-content: space-between;
+		&-title{
+			margin: 0px 10px;
+			font-size: 2rem;
+		}
+		&-buttonGroup{
+			display:none;
+			&-buttons{
+				font-size: 2rem;
+				margin: 10px 2px;
+			}	
+		}
+	}
 }

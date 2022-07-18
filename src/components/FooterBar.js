@@ -1,5 +1,5 @@
 import "./footerBar.scss";
-// eslint-disable-next-line
+import {SiLinkedin} from "react-icons/si"
 import gsap from "gsap";
 
 export default function FooterBar(){
@@ -9,9 +9,11 @@ export default function FooterBar(){
 			<div>
 			 &copy; Copyright {new Date().getFullYear()}. Made by
               Jason Zamora aka<span style={{color:"white",fontSize:"1.2rem"}}>&nbsp; GSdaBlessedFist</span>&nbsp;| View on {''}&nbsp;
-              <a href="https://github.com/GSdaBlessedFist/Portfolio_version2" target="_blank">
+              <a href="https://github.com/GSdaBlessedFist/Portfolio_version2" style={{color:"white",textDecoration:"none"}} target="_blank">
                 GitHub
               </a>
+              <a href="https://www.linkedin.com/in/jason-e-zamora/" style={{marginLeft:"10px",fontSize:"1.25rem",color:"white"}} target="blank"><SiLinkedin/></a>
+              
             </div>
 		</nav>
 	</>)

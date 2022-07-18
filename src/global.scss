@@ -36,6 +36,13 @@ html {
 body{
 	color: $menuLetters;
 	background: linear-gradient(to bottom,$bg,$bgDark);
-	/*overflow: hidden;*/
-	height:100vh;
+	overflow: hidden;
+	min-height:100vh;
 }
+
+@media (max-width:1250px){
+	body{
+		overflow: hidden;
+		height:100vh;
+	}
+};

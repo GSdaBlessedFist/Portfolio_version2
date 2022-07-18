@@ -62,3 +62,30 @@
 	fill-rule:evenodd;
 	stroke-width:0.2646;
 }
+
+@media (max-width:1250px){
+	#homePageMenu{
+		top: 85px;
+		right: clamp(5%, 10%, 75px);
+		transform-origin: 100% 0%;
+		transform: scale(.85)
+	}
+};
+
+@media (max-width:768px){
+	#homePageMenu{
+		top: 85px;
+		right: clamp(5%, 10%, 75px);
+		transform-origin: 100% 0%;
+		transform: scale(.65)
+	}
+}
+
+@media (max-width:575px){
+	#homePageMenu{
+		top: 45px;
+		right: clamp(5%, 2%, 35px);
+		transform-origin: 100% 0%;
+		transform: scale(.65)
+	}
+}
