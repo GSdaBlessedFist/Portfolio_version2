@@ -14,7 +14,6 @@
 		@include mainFont;
 		font-size: 150px;
 		padding: auto 0px;
-		/*border-bottom: $highlightMenuLetters;*/
 		border-bottom: white;
 		&--buttons{
 			grid-area: title;
@@ -37,7 +36,7 @@
 .projectsComponent{
 	
 	margin: 0 auto;
-	width: 85%;
+	width: 90%;
 	height: 650px;
 	display: flex;
 	justify-content: space-between;
@@ -47,7 +46,7 @@
 		order:1;
 		padding: 30px 15px;
 		@include minorFont;
-		font-size: 1.5rem;
+		font-size: 1.45rem;
 		width: clamp(25%,800px,75%);
 		& > h2{
 			letter-spacing: .5px;
@@ -94,13 +93,132 @@
 }
 
 @media (max-width:1250px){
-	
+	.projectsPageGrid{
+		grid-template-rows: 160px 1fr;
+		width: 85%;
+		&__title{
+			font-size: 8rem;
+		}
+	}
+	.projectsComponent{
+		height: 575px;
+		&__descriptionSection{
+			word-wrap: break-word;
+			font-size: 1.15rem;
+		}
+		&__workSection{
+			font-size:3.5rem;
+			&_url{
+				text-decoration: none;
+				@include minorFont;
+				color: $menuLetters;
+				font-size: 2rem;
+				margin: 25px;
+			}
+		}
+	}
 };
+@media (max-width:992px){
+	.projectsPageGrid{
+		grid-template-rows: 115px 1fr;
+		width: 90%;
+		&__title{
+			font-size: 7rem;
+		}
+	}
+	.projectsComponent{
+		width: 100%;
+		height: 520px;
+		&__descriptionSection{
+			word-wrap: break-word;
+			font-size: 1rem;
+		}
+		
+	}
+}
 
 @media (max-width:768px){
-	
+	.projectsPageGrid{
+		grid-template-rows: 100px 1fr;
+		&__title{
+			font-size: 5.5rem;
+		}
+	}
+	.projectsComponent{
+		height: 575px;
+		&__descriptionSection{
+			word-wrap: break-word;
+			font-size: 1rem;
+			&--description{
+				margin-bottom: 10px;	
+			}
+		}
+		&__workSection{
+			font-size:3rem;
+			&_url{
+				text-decoration: none;
+				@include minorFont;
+				color: $menuLetters;
+				font-size: 2rem;
+				margin: 25px;
+			}
+		}
+	}
 }
 
 @media (max-width:575px){
-	
+	.projectsPageGrid{
+		grid-template-rows: 80px 1fr;
+		&__title{
+			font-size: 4.5rem;
+		}
+	}
+	.projectsComponent{
+		height: 350px;
+		&__descriptionSection{
+			display: flex;
+			flex-direction:column;
+			align-items: center;
+			word-wrap: break-word;
+			font-size: 1rem;
+			padding: 30px 5px;
+			&--description{
+				display: none;
+				margin-bottom: 10px;	
+			}
+			& >*{
+				margin-left: 0px;
+			}
+			& h2:nth-of-type(1){
+				display: none;
+			}
+			&--goal{
+				display: none;
+			}
+			& h2:nth-of-type(2){
+				display: none;
+			}
+			& h2:nth-of-type(3){
+				grid-area: tech stack;
+				line-height: 1.5rem;
+				margin-bottom: 6px;
+			}
+		}
+		&__workSection{
+			font-size:2rem;
+			padding: 5px;
+			padding-top: 15px;
+			&_url{
+				text-decoration: none;
+				@include minorFont;
+				color: $menuLetters;
+				font-size: 1.5rem;
+			}
+			&--screenshot{
+				margin: 10px auto;
+				width: 90%;
+				box-shadow: 0px 5px 10px 5px hsla(0,100%,0%,.5);
+			}
+		}
+	}
 }
