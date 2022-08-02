@@ -1,3 +1,4 @@
+import {Helmet} from "react-helmet";
 import {useEffect,useRef, useState} from "react";
 import gsap from "gsap";
 import {aboutMeInfo,personalText,professionalText} from "../aboutMeInfo.js";
@@ -25,6 +26,13 @@ export default function AboutMePage(){
 	},[pupilXPosition,pupilYPosition])
 	
 	return (<>
+		<Helmet>
+             <meta charSet="utf-8" />
+             <title>Portfolio-AboutMe page</title>
+             <meta name="description" content="The bio page on JasonZamoraPortfolio.ml" />
+         </Helmet>
+
+
 		<div className="aboutMePageGrid">
 			<div className="aboutMePageGrid__title">about me</div>
 			<div className="aboutMePageGrid__contentArea">

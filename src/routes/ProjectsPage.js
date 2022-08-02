@@ -1,3 +1,4 @@
+import {Helmet} from "react-helmet";
 import {useRef,useEffect} from "react";
 import "./projectsPage.scss";
 import pieces from "../projectInfo.js";
@@ -22,6 +23,14 @@ export default function ProjectsPage(){
 	},[])
 	const revPieces = pieces.reverse();
 	return (<>
+		<Helmet>
+             <meta charSet="utf-8" />
+             <title>Portfolio-Projects page</title>
+             <meta name="description" content="Project gallery on JasonZamoraPortfolio.ml" />
+         </Helmet>
+
+
+
 		<div className="projectsPageGrid">
 			<div className="projectsPageGrid__title">Projects
 				{/*{revPieces.map((piece,index)=>{

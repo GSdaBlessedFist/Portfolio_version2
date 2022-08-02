@@ -16,6 +16,8 @@ export default function Contact(){
       }, (error) => {
           console.log(error.text);
       });
+    form.current.parentElement.parentElement.style.display = 'none';
+
   };
 
   return (
