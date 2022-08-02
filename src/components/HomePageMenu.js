@@ -9,6 +9,7 @@ Modal.setAppElement('#root');
 
 const primaryMenuColor = getComputedStyle(document.documentElement).getPropertyValue('--menuLetters');
 const bgLightColor = getComputedStyle(document.documentElement).getPropertyValue('--bgLight');
+const highlightMenuLetters = getComputedStyle(document.documentElement).getPropertyValue('--highlightMenuLetters');
 
 export default function HomePageMenu(){
 
@@ -74,9 +75,13 @@ export default function HomePageMenu(){
       projectLetters.forEach((pl)=>{
         pl.addEventListener("mouseenter",function(e){
           e.preventDefault();
-          gsap.to(projectLetters,{
-            fill: "white",
-            duration: .25
+          // gsap.to(projectLetters,{
+          //   fill: "hsl(27, 100%, 49%)",
+          //   duration: .25
+          // })
+          gsap.set(projectLetters,{
+            fill: highlightMenuLetters,
+            
           })
         })
       })
@@ -117,9 +122,8 @@ export default function HomePageMenu(){
       theDojoLetters.forEach((dl)=>{
         dl.addEventListener("mouseenter",function(e){
           e.preventDefault();
-          gsap.to(theDojoLetters,{
-            fill: "white",
-            duration: .25
+          gsap.set(theDojoLetters,{
+            fill: highlightMenuLetters
           })
         })
       })
@@ -150,9 +154,8 @@ export default function HomePageMenu(){
       aboutMeLetters.forEach((al)=>{
         al.addEventListener("mouseenter",function(e){
           e.preventDefault();
-          gsap.to(aboutMeLetters,{
-            fill: "white",
-            duration: .25
+          gsap.set(aboutMeLetters,{
+            fill: highlightMenuLetters
           })
         })
       })
@@ -199,6 +202,20 @@ export default function HomePageMenu(){
         .to("#email-icon",{stroke:primaryMenuColor,duration:.75},"-=.25");
         //return emailani;
     }
+    const email = document.querySelector("#email-icon");
+    email.addEventListener('mouseenter',(e)=>{
+      e.preventDefault();
+          gsap.set("#email-icon",{
+            stroke: highlightMenuLetters
+          })
+    })
+    email.addEventListener("mouseleave",function(e){
+          e.preventDefault();
+          gsap.to("#email-icon",{
+            stroke: primaryMenuColor,
+            duration: .55
+          })
+        })
 
     const master = gsap.timeline();
     master.add(projectsAnimation)

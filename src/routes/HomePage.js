@@ -16,13 +16,16 @@ export default function HomePage(){
 
 		<div className="homePageGrid">
 			<div className="space"></div>
-			<div className="middle">
-
-				
-				
+			<div className="middle">				
 				<HomePageMenu/>
 			</div>
-			<div className="space"></div>
+			<div className="space">
+				<div>
+					<div>web development</div>
+					<div>graphic art</div>
+					<div>digital marketing</div>
+				</div>
+			</div>
 		</div>
 	</>)
 }

@@ -12,13 +12,14 @@
 
 :root{
 	--bgLight: #7684AA;
-	--bg: #4E5E7E;/*hsla(219, 23, 40,.5)*/
+	--bg: hsla(219, 23%, 40%,1);/*hsla(219, 23, 40,.5)  #4E5E7E  */
 	--bgDark: #283A52;
 	--menuLetters: #C4CFE8;/*hsla(62,44%,84%,.5)*/
-	--highlightMenuLetters: #F2F2F1;
+	--highlightMenuLetters: hsla(30, 100%, 49%,1);/*#F2F2F1*/
 }
 
 $bg : var(--bg);
+$bg2: hsla(15, 23%, 40%,1);/*test color*/
 $bgLight : var(--bgLight);
 $bgDark : var(--bgDark);
 $menuLetters:  var(--menuLetters);
@@ -35,7 +36,8 @@ html {
 }
 body{
 	color: $menuLetters;
-	background: linear-gradient(to bottom,$bg,$bgDark);
+	background: linear-gradient(to bottom,$bg 85%,$bg2);
+	/*background: linear-gradient(to bottom,$bgDark 75%,$bg2 76%,$bgDark 82%);*/
 	overflow: hidden;
 	min-height:100vh;
 }
