@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+@mixin font{
+  font-family: 'Alfa Slab One', cursive;
+}
+body{
+  background: #000;
+}
+.container{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 600px;
+  height: 250px;
+  justify-content: center;
+  border: 1px skyblue solid;
+  margin: 50px auto;
+}
+.formContainer{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  border:1px red solid;
+  margin-top:8px;
+}
+form{
+  position: relative;
+  right: 0;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.btngroup{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100px;
+  border: 2px red solid;
+}
+.input{
+  margin: 0px auto;
+}
+#display-text{
+  transform-origin: center center;
+  text-anchor: start;
+  width: 600px;
+  height :200px;
+  font-size: 180px;
+  fill: white;
+  @include font;
+}

@@ -1,6 +1,7 @@
 import {useState, useRef, useEffect} from "react";
 import EcospherePond from "./theDojoPieces/EcospherePond";
 import SecondOpinionLogo from"./theDojoPieces/SecondOpinionLogo";
+import ReactiveLettering from "./theDojoPieces/ReactiveLettering";
 //import Funnel from "./theDojoPieces/Funnel";
 import {FaArrowAltCircleRight,FaArrowAltCircleLeft} from "react-icons/fa";
 import "./theDojoSlider.scss";
@@ -10,6 +11,7 @@ export default function TheDojoSlider(){
 	const [currentSlide,setCurrentSlide] = useState(0);
 	const componentsArray = [
 		<EcospherePond height={600} key="ecosphere" />,
+		// <ReactiveLettering key="reactiveLettering"/>,
 		<SecondOpinionLogo width={300} key="secondOpinionLogo"/>
 		
 	]

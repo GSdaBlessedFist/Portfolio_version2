@@ -1,7 +1,7 @@
 import * as React from "react"
 import {useEffect,useRef} from "react";
 import gsap from "gsap";
-import "./ecospherePond.scss";
+import styles from "./ecospherePond.module.scss";
 
 const EcospherePond = (props) => {
 

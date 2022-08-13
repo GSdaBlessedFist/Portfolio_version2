@@ -1,6 +1,6 @@
 import {useEffect,useRef} from "react";
 import {gsap} from "gsap";
-import "./funnel.scss";
+import styles from "./funnel.module.scss";
 
 
 export default function Funnel(){

@@ -1,4 +1,4 @@
-import "./secondOpinionLogo.scss";
+import styles from "./secondOpinionLogo.module.scss";
 
 export default function SecondOpinionLogo(props){
 	
