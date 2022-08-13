@@ -12,7 +12,7 @@ import TheDojoPage from "./routes/TheDojoPage";
 import AboutMePage from "./routes/AboutMePage";
 import ReactGA from 'react-ga4';
 
-ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_MEASUREMENT_ID);
+ReactGA.initialize("G-C5LPNG85N0");
 
 
 
