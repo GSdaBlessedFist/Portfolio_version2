@@ -17,22 +17,9 @@ ReactGA.send("pageview");
 
 function App() {
 
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
+  
 
   return (
-        <Helmet>
-          <!-- Google tag (gtag.js) -->
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5LPNG85N0"></script>
-          <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-C5LPNG85N0');
-          </script>
-        </Helmet>
         <BrowserRouter>
             <PrimeGrid>    
               <Routes>
